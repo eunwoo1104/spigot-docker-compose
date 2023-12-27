@@ -16,4 +16,4 @@ RUN wget -O BuildTools.jar https://hub.spigotmc.org/jenkins/job/BuildTools/lastS
 RUN java -jar BuildTools.jar --rev $version && \
   mv spigot-${version}.jar spigot.jar
 
-CMD [ "sh", "-c", "mv ./spigot.jar ./server/spigot.jar; cd server; exec java -jar -Xms1G -Xmx8G spigot.jar" ]
+CMD [ "sh", "-c", "mv -n ./spigot.jar ./server/spigot.jar; cd server; exec java -jar -Xms1G -Xmx8G spigot.jar" ]
