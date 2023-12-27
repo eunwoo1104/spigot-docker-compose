@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  soy-mc:
+    build: .
+    container_name: soy-mc
+    volumes:
+      - ./server:/usr/src/app/server
+    ports:
+      - "25565:25565"
